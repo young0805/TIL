@@ -10,3 +10,15 @@
 	String date = (new Date()).toString();
 %>
 로그인 시간: <%= date %>
+<br><br>
+<%
+	int count = 0;
+	String sval = (String) application.getAttribute("counter"); // "1"
+	if (sval != null){
+		count = Interger.valueOf(sval);	// "1" --> 1
+	}
+	count++;
+	out.print("방문자수: " + counter);
+	application.setAttribute("counter", String.valueOf(++count));
+	
+%>
